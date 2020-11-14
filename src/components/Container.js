@@ -1,28 +1,34 @@
-// import React, { useState, useEffect } from "react";
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
-const Container = (props) => {
+const EmployeeContainer = (props) => {
     return (
         props.employees.map(employee => {
-            console.log(employee.name)
-           
-                <div class="card mb-3" style = "max-width: 540px;" >
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="..." class="card-img" alt="..." />
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            console.log(employee)
+            return (
+                // <h1> {employee.name.first} </h1>
+
+                <Container>
+                    <img
+                        width={80}
+                        height={80}
+                        className="mr-3"
+                        src={employee.picture.medium}
+                        alt={employee.name.first}
+                    />
+                    <Media.Body>
+                    <h5>{employee.name.last}, {employee.name.first} </h5>
+                    <ul>City: {employee.location.city} </ul>
+                    <ul>State: {employee.location.state} </ul>
+                    <ul>phone: {employee.phone} </ul>
+                    </Media.Body>
+                </Container>
+            )
         })
     )
 
 
 }
 
-export default Container;
+export default EmployeeContainer;
