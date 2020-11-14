@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import "../styles/Container.css";
 
 const EmployeeContainer = (props) => {
     return (
@@ -9,20 +10,24 @@ const EmployeeContainer = (props) => {
             return (
                 // <h1> {employee.name.first} </h1>
 
-                <Container>
-                    <img
-                        width={80}
-                        height={80}
-                        className="mr-3"
-                        src={employee.picture.medium}
+                <Container className="box">
+                    <Row>
+                        <Col xs={4}>
+                        <img
+                        src={employee.picture.large}
                         alt={employee.name.first}
                     />
-                    <Media.Body>
-                    <h5>{employee.name.last}, {employee.name.first} </h5>
-                    <ul>City: {employee.location.city} </ul>
-                    <ul>State: {employee.location.state} </ul>
-                    <ul>phone: {employee.phone} </ul>
-                    </Media.Body>
+                        </Col>
+                        <Col xs={8}>
+                    <Row className="employee">{employee.name.last}, {employee.name.first} </Row>
+                    <Row>Age: {employee.dob.age} </Row>
+                    <Row>City: {employee.location.city} </Row>
+                    <Row>State: {employee.location.state} </Row>
+                    <Row>phone: {employee.phone} </Row>
+                    </Col>
+                    </Row>
+
+
                 </Container>
             )
         })
