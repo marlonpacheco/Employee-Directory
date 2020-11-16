@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "gh-pages": "^3.1.0",
     "mdbreact": "^4.27.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
@@ -16,11 +17,14 @@
     "usestate": "^1.1.3",
     "web-vitals": "^0.2.4"
   },
+  "homepage": "https://marlonpacheco.github.io/Employee-Directory/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b main -d build"
   },
   "eslintConfig": {
     "extends": [
