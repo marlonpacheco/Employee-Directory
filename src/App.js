@@ -55,7 +55,7 @@ function App() {
   const [employees, setEmployees] = useState([]);
   const [filteredEmployees, setFilteredEmployees] = useState([]);
   useEffect(() => {
-    axios.get("https://randomuser.me/api/?results=50&nat=us")
+    axios.get("https://randomuser.me/api/?results=100&nat=us")
       .then((response) => {
         console.log(response.data.results);
         setEmployees([...response.data.results]);
